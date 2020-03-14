@@ -14,7 +14,7 @@ client.on('guildMemberAdd', member => {
         return;
     }
     console.log(`${user.tag} joined the guild`)
-    channel.send(`幻黒サーバ Discordへようこそ、<@${user.id}>さん！\n あなたのMinecraft IDをこのチャンネルへ書いてください！`);
+    channel.send(`幻黒サーバ Discordへようこそ、<@${user.id}>さん！\nこのチャンネルへ自己紹介をお願いします！(Minecraft IDは必須です。)\n管理者が確認すると、他のチャンネルを見ることができるようになります！`);
 });
 
 client.login(process.env.TOKEN);
