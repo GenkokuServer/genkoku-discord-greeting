@@ -1,0 +1,4 @@
+name: genkoku-greeting
+script: index.js
+watch: true
+log-date-format: "YYYY-MM-DD HH:mm Z"
