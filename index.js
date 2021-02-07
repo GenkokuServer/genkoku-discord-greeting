@@ -1,7 +1,12 @@
 require('dotenv').config();
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({
+    ws: {
+        intents: ['GUILD_MEMBERS'],
+    }
+});
 
+client.login(process.env.TOKEN);
 client.on('guildMemberAdd', member => {
     const user = member.user;
     if (user.bot) {
@@ -16,5 +21,3 @@ client.on('guildMemberAdd', member => {
     console.log(`${user.tag} joined the guild`)
     channel.send(`幻黒サーバ Discordへようこそ、<@${user.id}>さん！\nこのチャンネルへ自己紹介をお願いします！(Minecraft IDは必須です。)\n管理者が確認すると、他のチャンネルを見ることができるようになります！`);
 });
-
-client.login(process.env.TOKEN);
